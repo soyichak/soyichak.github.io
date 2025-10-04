@@ -1,0 +1,30 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+    height: 100vh;         
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: blanchedalmond;
+}
+h1 {
+    color: yellowgreen;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav li {
+    margin: 10px 0;
+}
+nav a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+}
