@@ -1,0 +1,70 @@
+h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute; 
+    text-align: center; 
+    left:50vw; top:100vh; 
+    z-index: 9999;
+}
+
+h2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:10vw;
+    position: absolute;
+    text-align: center;
+    left:20vw;
+    z-index:9999;
+}
+
+body {
+    background-color: rgb(203, 178, 196);
+    font-style:initial;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+.wl {
+    position:absolute;
+    color:white;
+    font-size: 30vw;
+    transform: scaleX(2) rotate(90deg);
+
+}
+.wl:nth-child(1){
+    left:50vw; top:0vh;
+}
+.wl:nth-child(2){
+    left:45vw; top:50vh;
+}
+.wl:nth-child(3){
+    left:50vw; top:100vh;
+    transform: scaleX(1.5) scaleY(1.5) rotate(90deg);
+}
+.wl:nth-child(4){
+    left:30vh; top:150vh;
+}
+
+.pl{
+    position:absolute;
+    color:rgb(238, 222, 220);
+    font-size: 30vw;
+    transform:scaleY(2)
+}
+
+.pl:nth-child(5){
+    left:10vw; top:55vh;
+}
+.pl:nth-child(6){
+    left:30vw; top:80vh;
+}
+.pl:nth-child(7){
+    left:50vw; top:30vh;
+}
+.pl:nth-child(8){
+    left:65vw; top:125vh;
+}
+
+#theBackward{
+    transform: rotate(90deg);
+    color: rgb(255,255,255)
+}
