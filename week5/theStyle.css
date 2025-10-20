@@ -1,0 +1,65 @@
+.box {
+  background-color:darkolivegreen;
+  border-radius: 10px;
+  width: 300px;
+  height: 500px;
+}
+
+
+.box:hover {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: 10;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.reveal-container {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  overflow: hidden; /* ensures clean clipping */
+}
+
+.box2 {
+  background-color: rgb(132, 149, 101);
+  border-radius: 10px;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  z-index: 2;
+  top:0;
+  left:0;
+  transition: transform 0.5s ease; 
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px); 
+  }
+}
+
+.box2:hover {
+  transform: translateY(500px);
+}
+
+.hidden-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; 
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(80, 70, 40);
+  font-size: 24px;
+  opacity: 0.7; 
+}
