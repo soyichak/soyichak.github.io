@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(217, 204, 167);
+    align-items:center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width:500px;
+    height:750px;
+    object-fit: cover;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2)
+
+}
+
+button {
+    border-radius: 40px;
+    margin: 50px;
+}
