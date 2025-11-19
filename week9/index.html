@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InstaDilemma – The Social Dilemma Feed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-bg">
+    <div class="phone-frame">
+      <!-- Top bar -->
+      <header class="ig-topbar">
+        <div class="top-left">
+          <span class="ig-logo">TheSocialDilemma</span>
+          <span class="ig-dot"></span>
+        </div>
+        <div class="top-icons">
+          <span class="icon">＋</span>
+          <span class="icon">♡</span>
+        </div>
+      </header>
+
+      <!-- Stories -->
+      <section class="stories-bar">
+        <div class="story">
+          <div class="story-ring story-self"></div>
+          <span class="story-name">soyichak</span>
+        </div>
+        <div class="story">
+          <div class="story-ring"></div>
+          <span class="story-name">bellawang</span>
+        </div>
+        <div class="story">
+          <div class="story-ring"></div>
+          <span class="story-name">jasonlee</span>
+        </div>
+        <div class="story">
+          <div class="story-ring"></div>
+          <span class="story-name">medianews</span>
+        </div>
+      </section>
+
+      <!-- Feed -->
+      <main class="feed">
+
+        <!-- POST 1: Social media addiction -->
+        <article class="post">
+          <header class="post-header">
+            <div class="user-info">
+              <div class="avatar avatar-blue"></div>
+              <div class="user-text">
+                <span class="username">bellawang</span>
+              </div>
+            </div>
+            <span class="post-menu">⋯</span>
+          </header>
+
+          <div class="post-media">
+            <img src="selfie.png" alt="thesocialdilemmaselfie">
+          </div>
+
+          <section class="post-actions">
+            <!-- like toggle -->
+            <input type="checkbox" id="like-1" class="like-checkbox">
+            <label for="like-1" class="icon-btn heart-btn">
+              <span class="heart-outline">♡</span>
+              <span class="heart-filled">♥</span>
+            </label>
+
+            <button class="icon-btn">💬</button>
+            <button class="icon-btn">✈</button>
+            <button class="icon-btn icon-save">🔖</button>
+          </section>
+
+          <section class="post-meta">
+            <p class="likes">
+              <span class="likes-count">342 likes</span>
+            </p>
+            <p class="caption">
+              <span class="username">bellawang</span>
+              <span class="tag">#selfie</span> 
+            </p>
+            <p class="comments-link">View all 47 comments</p>
+            <p class="time">9 minutes ago</p>
+          </section>
+
+          
+        </article>
+
+         
+
+        <!-- POST 2: Fake news / misinformation -->
+        <article class="post">
+          <header class="post-header">
+            <div class="user-info">
+              <div class="avatar avatar-red"></div>
+              <div class="user-text">
+                <span class="username">medianews</span>
+              </div>
+            </div>
+            <span class="post-menu">⋯</span>
+          </header>
+
+          <div class="post-media">
+            <img src="fakenews.jpg" alt="Collage of conflicting news headlines on a phone screen">
+          </div>
+
+          <section class="post-actions">
+            <input type="checkbox" id="like-3" class="like-checkbox">
+            <label for="like-3" class="icon-btn heart-btn">
+              <span class="heart-outline">♡</span>
+              <span class="heart-filled">♥</span>
+            </label>
+
+            <button class="icon-btn">💬</button>
+            <button class="icon-btn">✈</button>
+            <button class="icon-btn icon-save">🔖</button>
+          </section>
+
+          <section class="post-meta">
+            <p class="likes">
+              <span class="likes-count">118,402 likes</span>
+              <span class="after-like">falsehood travels faster than fact</span>
+            </p>
+            <p class="caption">
+              <span class="username">medianews</span>
+              In <em>The Social Dilemma</em>, insiders admit that fake news spreads more quickly
+              because it’s more clickable. The feed isn’t asking, “Is this true?”
+              It’s asking, “Will this keep you here?”
+              <span class="tag">#fakenews</span> 
+            </p>
+            <p class="comments-link">View 3,210 comments</p>
+            <p class="time">2 hours ago</p>
+          </section>
+
+          
+
+      
+
+      </main>
+
+      <!-- Bottom nav -->
+      <footer class="ig-bottom-nav">
+        <span class="nav-icon active">🏠</span>
+        <span class="nav-icon">🔍</span>
+        <span class="nav-icon">▶</span>
+        <span class="nav-icon">🛒</span>
+        <span class="nav-icon">👤</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
