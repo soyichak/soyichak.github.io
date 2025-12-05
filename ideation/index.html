@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MemoryLink Interface Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="logo-mark">⌁</div>
+      <div>
+        <h1>MemoryLink Interface Console</h1>
+        <p class="subtitle">Authorized Users Only</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- Screen: mode choice -->
+      <section id="screen-choice" class="screen active">
+        <h2>What would you like to do?</h2>
+        <p class="hint-text">
+          Select an operation to begin interacting with your brain implant.
+        </p>
+        <div class="choice-buttons">
+          <button id="btn-insert" class="btn primary">Insert Memory</button>
+          <button id="btn-remove" class="btn secondary">Remove Memory</button>
+        </div>
+      </section>
+
+      <!-- Screen: remove memory -->
+      <section id="screen-remove" class="screen">
+        <div class="screen-header">
+          <button class="back-link" data-back-to="screen-choice">← Back</button>
+          <h2>Select a memory to remove</h2>
+        </div>
+
+        <p class="hint-text">
+          Choose from your mapped memories. Tags help approximate emotional context.
+        </p>
+
+        <div class="tag-row">
+          <button class="tag active">All</button>
+          <button class="tag">Childhood</button>
+          <button class="tag">Family</button>
+          <button class="tag">Achievement</button>
+          <button class="tag">Romance</button>
+          <button class="tag">Travel</button>
+        </div>
+
+        <div class="memory-grid">
+          <button
+            class="memory-card"
+            data-label="Summer festival with friends"
+            data-tags="Travel"
+          >
+            <div class="memory-thumb thumb-1"></div>
+            <div class="memory-meta">
+              <h3>Summer festival</h3>
+              <p>Late teens · Joy · Friends</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="Grandmother’s kitchen on Sundays"
+            data-tags="Childhood,Family"
+          >
+            <div class="memory-thumb thumb-2"></div>
+            <div class="memory-meta">
+              <h3>Grandmother’s kitchen</h3>
+              <p>Childhood · Warmth · Family</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="First university acceptance"
+            data-tags="Achievement"
+          >
+            <div class="memory-thumb thumb-3"></div>
+            <div class="memory-meta">
+              <h3>Acceptance letter</h3>
+              <p>Achievement · Relief · Future</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="Night train to the coast"
+            data-tags="Travel"
+          >
+            <div class="memory-thumb thumb-4"></div>
+            <div class="memory-meta">
+              <h3>Night train</h3>
+              <p>Travel · Solitude · Wonder</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="First kiss in the rain"
+            data-tags="Romance"
+          >
+            <div class="memory-thumb thumb-1"></div>
+            <div class="memory-meta">
+              <h3>First kiss</h3>
+              <p>Romance · Rain · Heartbeat</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="Sibling’s chaotic birthday party"
+            data-tags="Childhood,Family"
+          >
+            <div class="memory-thumb thumb-2"></div>
+            <div class="memory-meta">
+              <h3>Birthday chaos</h3>
+              <p>Childhood · Family · Laughter</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="Overnight study session before finals"
+            data-tags="Achievement"
+          >
+            <div class="memory-thumb thumb-3"></div>
+            <div class="memory-meta">
+              <h3>Finals night</h3>
+              <p>Achievement · Stress · Coffee</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card"
+            data-label="Airport goodbye at departure gate"
+            data-tags="Travel,Romance"
+          >
+            <div class="memory-thumb thumb-4"></div>
+            <div class="memory-meta">
+              <h3>Departure gate</h3>
+              <p>Travel · Parting · Longing</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- Screen: insert memory -->
+      <section id="screen-insert" class="screen">
+        <div class="screen-header">
+          <button class="back-link" data-back-to="screen-choice">← Back</button>
+          <h2>Select a memory type to insert</h2>
+        </div>
+
+        <p class="hint-text">
+          Choose the category of experience you wish to acquire.
+        </p>
+
+        <div class="memory-grid">
+          <button
+            class="memory-card insert-card"
+            data-label="Award ceremony on a global stage"
+          >
+            <div class="memory-thumb thumb-insert-1"></div>
+            <div class="memory-meta">
+              <h3>Global recognition</h3>
+              <p>Achievement · Applause · Spotlight</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Quiet morning in a glass house over the ocean"
+          >
+            <div class="memory-thumb thumb-insert-2"></div>
+            <div class="memory-meta">
+              <h3>Ocean dawn</h3>
+              <p>Calm · Luxury · Solitude</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="First steps of an adopted child toward you"
+          >
+            <div class="memory-thumb thumb-insert-3"></div>
+            <div class="memory-meta">
+              <h3>New family</h3>
+              <p>Attachment · Home · Joy</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Standing in a massive crowd at a historic protest"
+          >
+            <div class="memory-thumb thumb-insert-4"></div>
+            <div class="memory-meta">
+              <h3>Collective uprising</h3>
+              <p>Purpose · Risk · Unity</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Landing on a Mars observer colony platform"
+          >
+            <div class="memory-thumb thumb-insert-1"></div>
+            <div class="memory-meta">
+              <h3>Mars arrival</h3>
+              <p>Exploration · Awe · Silence</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Performing on stage during a world tour finale"
+          >
+            <div class="memory-thumb thumb-insert-3"></div>
+            <div class="memory-meta">
+              <h3>World tour finale</h3>
+              <p>Stage · Noise · Adrenaline</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Week-long silent retreat in the mountains"
+          >
+            <div class="memory-thumb thumb-insert-2"></div>
+            <div class="memory-meta">
+              <h3>Silent retreat</h3>
+              <p>Stillness · Clarity · Breath</p>
+            </div>
+          </button>
+
+          <button
+            class="memory-card insert-card"
+            data-label="Election night victory speech to a global audience"
+          >
+            <div class="memory-thumb thumb-insert-4"></div>
+            <div class="memory-meta">
+              <h3>Election night</h3>
+              <p>Power · Relief · Responsibility</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- Screen: confirm -->
+      <section id="screen-confirm" class="screen">
+        <div class="screen-header">
+          <button class="back-link" id="confirm-back">← Back</button>
+          <h2>Confirm operation</h2>
+        </div>
+
+        <div class="confirm-card">
+          <p class="confirm-label">Operation:</p>
+          <p class="confirm-value" id="confirm-operation">Remove</p>
+
+          <p class="confirm-label">Target memory:</p>
+          <p class="confirm-value" id="confirm-target">[none selected]</p>
+
+          <p class="warning-text">
+            This process cannot be reversed. Proceed only if you consent to permanent modification of your memory architecture.
+          </p>
+
+          <div class="confirm-actions">
+            <button class="btn ghost" id="btn-cancel">Cancel</button>
+            <button class="btn danger" id="btn-confirm">Yes, proceed</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen: progress -->
+      <section id="screen-progress" class="screen">
+        <div class="screen-header">
+          <h2 id="progress-title">Executing operation…</h2>
+        </div>
+
+        <div class="progress-card">
+          <p class="hint-text" id="progress-description">
+            Stabilizing neural lattice and synchronizing with implant…
+          </p>
+
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <p class="progress-percent" id="progress-percent">0%</p>
+
+          <p class="status-text" id="status-text">Initializing…</p>
+
+          <button class="btn primary done-button" id="btn-done" style="display: none;">
+            Return to console
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>© 2050 MemoryLink · Memory Interface Division</span>
+      <span class="status-pill">Implant link: <span class="status-dot"></span> stable</span>
+    </footer>
+  </div>
+</body>
+</html>
