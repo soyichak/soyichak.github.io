@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Ritual Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Handwritten cute font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <div class="logo-circle">✶</div>
+        <div>
+          <h1>Study Ritual Planner</h1>
+          <p class="subtitle">Write your plan and decorate with emojis</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Emoji palette</h2>
+        <p class="sidebar-text">
+          Drag an emoji into any day to decorate your study ritual.
+        </p>
+
+        <div class="emoji-palette">
+          <!-- study / focus -->
+          <span class="emoji" draggable="true">📚</span>
+          <span class="emoji" draggable="true">📝</span>
+          <span class="emoji" draggable="true">💻</span>
+          <span class="emoji" draggable="true">📖</span>
+          <span class="emoji" draggable="true">🧠</span>
+          <span class="emoji" draggable="true">📈</span>
+
+          <!-- cozy / reward -->
+          <span class="emoji" draggable="true">☕️</span>
+          <span class="emoji" draggable="true">🍵</span>
+          <span class="emoji" draggable="true">🍪</span>
+          <span class="emoji" draggable="true">🧋</span>
+          <span class="emoji" draggable="true">🍰</span>
+
+          <!-- vibe / mood -->
+          <span class="emoji" draggable="true">🌙</span>
+          <span class="emoji" draggable="true">⭐️</span>
+          <span class="emoji" draggable="true">🌸</span>
+          <span class="emoji" draggable="true">🌈</span>
+          <span class="emoji" draggable="true">🔥</span>
+          <span class="emoji" draggable="true">🎧</span>
+          <span class="emoji" draggable="true">🎮</span>
+          <span class="emoji" draggable="true">🐻</span>
+        </div>
+
+        <!-- Calendar Theme Picker -->
+        <div class="theme-picker">
+          <h3 class="sidebar-subtitle">Calendar color</h3>
+          <div class="theme-options">
+            <div class="theme-swatch" data-theme="default" style="background:#eef2ff"></div>
+            <div class="theme-swatch" data-theme="spring" style="background:#E8FAD7"></div>
+            <div class="theme-swatch" data-theme="sunset" style="background:#FFE3C7"></div>
+            <div class="theme-swatch" data-theme="midnight" style="background:#DDE4FF"></div>
+            <div class="theme-swatch" data-theme="mint" style="background:#D6FFF5"></div>
+            <div class="theme-swatch" data-theme="rose" style="background:#FFE0EB"></div>
+            <div class="theme-swatch" data-theme="dusk" style="background:#E0D7FF"></div>
+            <div class="theme-swatch" data-theme="charcoal" style="background:#E5E7EB"></div>
+          </div>
+        </div>
+
+        <button id="clear-all" class="ghost-btn clear-btn">
+          Clear all notes & emojis
+        </button>
+
+        <p class="sidebar-hint">
+          Click any box to type your plan, then drop emojis to mark focus,
+          rewards, or vibes.
+        </p>
+      </aside>
+
+      <!-- Calendars -->
+      <section class="calendars">
+        <!-- Weekly view -->
+        <section class="calendar-section">
+          <header class="calendar-header">
+            <h2>Weekly view</h2>
+            <p>One row for your weekly ritual.</p>
+          </header>
+
+          <div class="calendar-grid weekly-grid">
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Monday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Write your Monday plan..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Tuesday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Write your Tuesday plan..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Wednesday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Write your Wednesday plan..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Thursday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Write your Thursday plan..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Friday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Write your Friday plan..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Saturday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Weekend ritual..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+
+            <article class="day-cell">
+              <div class="day-header">
+                <span class="day-name">Sunday</span>
+              </div>
+              <div class="day-body">
+                <div
+                  class="day-notes"
+                  contenteditable="true"
+                  data-placeholder="Rest & reset..."
+                ></div>
+                <div class="day-emoji-drop" data-dropzone></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Monthly view -->
+        <section class="calendar-section">
+          <header class="calendar-header">
+            <h2>Monthly view</h2>
+            <p>Align the month to the correct weekday and decorate your days.</p>
+          </header>
+
+          <!-- Controls for month layout -->
+          <div class="month-controls">
+            <label>
+              First day of the month
+              <select id="month-start-day">
+                <option value="0">Monday</option>
+                <option value="1">Tuesday</option>
+                <option value="2">Wednesday</option>
+                <option value="3">Thursday</option>
+                <option value="4">Friday</option>
+                <option value="5">Saturday</option>
+                <option value="6">Sunday</option>
+              </select>
+            </label>
+
+            <label>
+              Number of days
+              <select id="month-total-days">
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30" selected>30</option>
+                <option value="31">31</option>
+              </select>
+            </label>
+
+            <button type="button" id="generate-month" class="ghost-btn month-generate-btn">
+              Generate month
+            </button>
+          </div>
+
+          <div class="month-header-row">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span>
+            <span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+
+          <div id="monthly-grid" class="calendar-grid monthly-grid">
+            <!-- JS will generate month cells -->
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Study Ritual Planner · weekly & monthly views</p>
+    </div>
+  </footer>
+</body>
+</html>
