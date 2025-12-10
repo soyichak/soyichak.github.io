@@ -14,6 +14,10 @@
   >
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- html2canvas for downloading views as images -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
   <script defer src="script.js"></script>
 </head>
 
@@ -93,6 +97,16 @@
 
       <!-- Calendars -->
       <section class="calendars">
+        <!-- Download buttons -->
+        <div class="download-row">
+          <button id="download-weekly" class="ghost-btn">
+            Download weekly view
+          </button>
+          <button id="download-monthly" class="ghost-btn">
+            Download monthly view
+          </button>
+        </div>
+
         <!-- Weekly view -->
         <section class="calendar-section">
           <header class="calendar-header">

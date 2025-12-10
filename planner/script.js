@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const paletteEmojis = document.querySelectorAll(".emoji");
   const monthlyGrid = document.getElementById("monthly-grid");
+  const weeklyGrid = document.querySelector(".weekly-grid");
   const clearBtn = document.getElementById("clear-all");
   const startDaySelect = document.getElementById("month-start-day");
   const totalDaysSelect = document.getElementById("month-total-days");
   const generateMonthBtn = document.getElementById("generate-month");
+  const downloadWeeklyBtn = document.getElementById("download-weekly");
+  const downloadMonthlyBtn = document.getElementById("download-monthly");
 
   const STORAGE_KEY = "studyRitual_v1";
   let currentTheme = "default";
@@ -13,43 +16,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTheme(theme) {
     currentTheme = theme;
+    let calendarBg = "#eef2ff";
+    let calendarBorder = "rgba(226, 232, 240, 0.95)";
+    let bodyBg = "#f4f7ff";
+
     switch (theme) {
       case "spring":
-        document.documentElement.style.setProperty("--calendar-bg", "#E8FAD7");
-        document.documentElement.style.setProperty("--calendar-border", "#C7E7AF");
+        calendarBg = "#E8FAD7";
+        calendarBorder = "#C7E7AF";
+        bodyBg = "#E8FAD7";
         break;
       case "sunset":
-        document.documentElement.style.setProperty("--calendar-bg", "#fcead7ff");
-        document.documentElement.style.setProperty("--calendar-border", "#deb28fff");
+        calendarBg = "#fcead7ff";
+        calendarBorder = "#deb28fff";
+        bodyBg = "#FFE3C7";
         break;
       case "midnight":
-        document.documentElement.style.setProperty("--calendar-bg", "#DDE4FF");
-        document.documentElement.style.setProperty("--calendar-border", "#AEBAFF");
+        calendarBg = "#DDE4FF";
+        calendarBorder = "#AEBAFF";
+        bodyBg = "#DDE4FF";
         break;
       case "mint":
-        document.documentElement.style.setProperty("--calendar-bg", "#e0fff7ff");
-        document.documentElement.style.setProperty("--calendar-border", "#befef2ff");
+        calendarBg = "#e0fff7ff";
+        calendarBorder = "#befef2ff";
+        bodyBg = "#D6FFF5";
         break;
       case "rose":
-        document.documentElement.style.setProperty("--calendar-bg", "#fce7efff");
-        document.documentElement.style.setProperty("--calendar-border", "#ffc1d5ff");
+        calendarBg = "#fce7efff";
+        calendarBorder = "#ffc1d5ff";
+        bodyBg = "#FFE0EB";
         break;
       case "dusk":
-        document.documentElement.style.setProperty("--calendar-bg", "#e2dbfcff");
-        document.documentElement.style.setProperty("--calendar-border", "#c4b6feff");
+        calendarBg = "#e2dbfcff";
+        calendarBorder = "#c4b6feff";
+        bodyBg = "#E0D7FF";
         break;
       case "charcoal":
-        document.documentElement.style.setProperty("--calendar-bg", "#E5E7EB");
-        document.documentElement.style.setProperty("--calendar-border", "#9CA3AF");
+        calendarBg = "#E5E7EB";
+        calendarBorder = "#9CA3AF";
+        bodyBg = "#E5E7EB";
         break;
       default:
-        document.documentElement.style.setProperty("--calendar-bg", "#eef2ff");
-        document.documentElement.style.setProperty(
-          "--calendar-border",
-          "rgba(226, 232, 240, 0.95)"
-        );
+        calendarBg = "#eef2ff";
+        calendarBorder = "rgba(226, 232, 240, 0.95)";
+        bodyBg = "#f4f7ff";
         break;
     }
+
+    document.documentElement.style.setProperty("--calendar-bg", calendarBg);
+    document.documentElement.style.setProperty("--calendar-border", calendarBorder);
+
+    // Make the page background follow the theme color
+    document.body.style.background = bodyBg;
   }
 
   /* SAVE & LOAD STATE */
@@ -304,6 +322,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* DOWNLOAD AS IMAGE */
+
+  function downloadElementAsImage(element, filename) {
+    if (!element || typeof html2canvas === "undefined") return;
+
+    html2canvas(element, {
+      backgroundColor: null
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = filename;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }).catch((err) => {
+      console.warn("Error capturing calendar image", err);
+    });
+  }
+
   /* WEEKLY INIT (static HTML) */
 
   const weeklyNotes = document.querySelectorAll(".weekly-grid .day-notes");
@@ -365,6 +400,20 @@ document.addEventListener("DOMContentLoaded", () => {
       saveState();
     });
   });
+
+  /* DOWNLOAD BUTTONS */
+
+  if (downloadWeeklyBtn && weeklyGrid) {
+    downloadWeeklyBtn.addEventListener("click", () => {
+      downloadElementAsImage(weeklyGrid, "study-weekly-view.png");
+    });
+  }
+
+  if (downloadMonthlyBtn && monthlyGrid) {
+    downloadMonthlyBtn.addEventListener("click", () => {
+      downloadElementAsImage(monthlyGrid, "study-monthly-view.png");
+    });
+  }
 
   /* INITIAL LOAD */
 
